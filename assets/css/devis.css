@@ -602,6 +602,8 @@ body.nav-active {
 
 .topbar {
   display: none;
+  z-index: 10; /* Ensure the topbar is above other elements */
+  position: relative;
 }
 
 
@@ -674,6 +676,12 @@ textarea.input-field {
 .form-right {
   background-repeat: repeat;
   background-position: top left;
+}
+
+.rdv {
+  position: relative;
+  z-index: 1; /* Ensure the rdv section is below the topbar */
+  margin-top: 130px; /* Increase margin to center the rdv section */
 }
 
 
@@ -916,6 +924,8 @@ textarea.input-field {
   /**
    * CUSTOM PROPERTY
    */
+
+   
 
   :root {
 
