@@ -1,0 +1,223 @@
+/*-----------------------------------*\
+  #index.css
+\*-----------------------------------*/
+
+/**
+ * copyright 2022 codewithsadee
+ */
+
+
+
+
+
+/*-----------------------------------*\
+  #CUSTOM PROPERTY
+\*-----------------------------------*/
+
+:root {
+
+    /**
+   * COLORS
+   */
+
+    --gold-crayola: hsl(38, 61%, 73%);
+    --quick-silver: hsla(0, 0%, 65%, 1);
+    --smoky-black-1: hsla(40, 12%, 5%, 1);
+    --smoky-black-2: hsla(30, 8%, 5%, 1);
+    --eerie-black-1: hsla(210, 4%, 9%, 1);
+    --eerie-black-2: hsla(210, 4%, 11%, 1);
+    --white: hsla(0, 0%, 100%, 1);
+    --white-alpha-10: hsla(0, 0%, 100%, 0.1);
+
+    /**
+   * TYPOGRAPHY
+   */
+
+    /* font-family */
+    --fontFamily-dm_sans: 'DM Sans', sans-serif;
+
+    /* font-size */
+    --fontSize-headline-1: calc(2rem + 2.5vw);
+    --fontSize-body-4: 1.6rem;
+
+    /* line-height */
+    --lineHeight-5: 1.85em;
+
+    /**
+   * TRANSITION
+   */
+
+    --transition-2: 500ms ease;
+
+    /**
+   * ADDITIONAL PROPERTIES
+   */
+
+    --radius-5: 5px;
+    --radius-10: 10px;
+    --shadow-1: 0px 4px 10px rgba(0, 0, 0, 0.2);
+
+}
+
+
+
+
+
+/*-----------------------------------*\
+  #RESET
+\*-----------------------------------*/
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--eerie-black-1);
+    color: var(--white);
+    font-family: var(--fontFamily-dm_sans);
+    font-size: var(--fontSize-body-4);
+    line-height: var(--lineHeight-5);
+}
+
+.header {
+    background-color: var(--smoky-black-1);
+    padding: 20px;
+    box-shadow: var(--shadow-1);
+}
+
+.header .navbar {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.header .navbar a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 1.4rem;
+    padding: 5px 10px;
+    border-radius: var(--radius-10);
+    transition: background-color var(--transition-2);
+}
+
+.header .navbar a.active,
+.header .navbar a:hover {
+    background-color: var(--gold-crayola);
+    color: var(--smoky-black-1);
+}
+
+.devis {
+    padding: 50px 20px;
+    background-color: var(--smoky-black-2);
+    text-align: center;
+}
+
+.card {
+    background-color: var(--smoky-black-1);
+    padding: 30px;
+    border-radius: var(--radius-10);
+    box-shadow: var(--shadow-1);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.devis .headline-1 {
+    font-size: var(--fontSize-headline-1);
+    margin-bottom: 20px;
+    text-align: center;
+    color: var(--gold-crayola);
+}
+
+.devis .form-text {
+    margin-bottom: 40px;
+    text-align: center;
+    color: var(--quick-silver);
+    font-size: 1.4rem;
+}
+
+.devis .form-text .link {
+    color: var(--gold-crayola);
+    text-decoration: underline;
+    transition: color var(--transition-2);
+}
+
+.devis .form-text .link:hover {
+    color: var(--white);
+}
+
+.devis-form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: var(--smoky-black-1);
+    padding: 30px;
+    border-radius: var(--radius-10);
+    box-shadow: var(--shadow-1);
+}
+
+.input-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.input-field {
+    background-color: var(--eerie-black-2);
+    color: var(--white);
+    border: 1px solid var(--white-alpha-10);
+    padding: 10px 20px;
+    border-radius: var(--radius-10);
+    font-size: 1.4rem;
+    outline: none;
+    transition: border-color var(--transition-2), box-shadow var(--transition-2);
+}
+
+.input-field::placeholder {
+    color: var(--quick-silver);
+}
+
+.input-field:focus {
+    border-color: var(--gold-crayola);
+    box-shadow: 0 0 5px var(--gold-crayola);
+}
+
+textarea.input-field {
+    resize: none;
+    height: 140px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--gold-crayola);
+    color: var(--smoky-black-1);
+    padding: 10px 20px;
+    border: none;
+    border-radius: var(--radius-10);
+    font-size: 1.4rem;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color var(--transition-2), transform var(--transition-2);
+}
+
+.btn:hover {
+    background-color: var(--white);
+    color: var(--gold-crayola);
+    transform: translateY(-2px);
+}
+
+.footer {
+    background-color: var(--smoky-black-1);
+    color: var(--quick-silver);
+    text-align: center;
+    padding: 20px;
+    font-size: 1.4rem;
+    margin-top: 50px;
+    box-shadow: var(--shadow-1);
+}
