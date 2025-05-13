@@ -1306,28 +1306,28 @@ body.nav-active {
 
 
 /*-----------------------------------*\
-  #TESTIMONIALS
+  #témoignages
 \*-----------------------------------*/
 
-.testi {
+.témoignages {
   padding-block-end: 340px;
   position: static;
 }
 
-.testi .quote {
+.témoignages .quote {
   font-size: 7rem;
   font-family: var(--fontFamily-forum);
   line-height: 0.7em;
 }
 
-.testi .wrapper {
+.témoignages .wrapper {
   display: flex;
   justify-content: center;
   gap: 2px;
   margin-block: 40px 50px;
 }
 
-.testi .separator {
+.témoignages .separator {
   animation: rotate360 15s linear infinite;
 }
 
@@ -1337,7 +1337,7 @@ body.nav-active {
   margin-block-end: 15px;
 }
 
-.testi .profile-name {
+.témoignages .profile-name {
   color: var(--gold-crayola);
   font-weight: var(--weight-bold);
   text-transform: uppercase;
@@ -2155,10 +2155,10 @@ textarea.input-field {
 
 
   /**
-   * TESTIMONIALS
+   * témoignages
    */
 
-  .testi-text {
+  .témoignages-text {
     max-width: 910px;
     margin-inline: auto;
   }
@@ -2384,7 +2384,7 @@ textarea.input-field {
 
 
   /**
-   * TESTIMONIALS
+   * témoignages
    */
 
   .form-left,
