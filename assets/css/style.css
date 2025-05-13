@@ -1061,17 +1061,17 @@ body.nav-active {
   margin-block-end: 40px;
 }
 
-.service-card {
+.about-card {
   overflow: hidden;
 }
 
-.service-card .has-before {
+.about-card .has-before {
   padding-block: 30px;
   margin-block-end: 26px;
   z-index: 1;
 }
 
-.service-card .has-before::before {
+.about-card .has-before::before {
   top: 0;
   left: 50%;
   transform: translateX(-50%);
@@ -1087,20 +1087,20 @@ body.nav-active {
   will-change: transform;
 }
 
-.service-card:is(:hover, :focus-within) .has-before::before {
+.about-card:is(:hover, :focus-within) .has-before::before {
   transform: rotateY(0.5turn) translateX(50%);
   transition-delay: 300ms;
 }
 
-.service-card .card-banner {
+.about-card .card-banner {
   transition: var(--transition-2);
 }
 
-.service-card:is(:hover, :focus-within) .card-banner {
+.about-card:is(:hover, :focus-within) .card-banner {
   transform: scale(1.05);
 }
 
-.service .card-title {
+.about.card-title {
   margin-block-end: 12px;
 }
 
