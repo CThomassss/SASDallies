@@ -1,23 +1,11 @@
 /*-----------------------------------*\
-  #index.css
-\*-----------------------------------*/
-
-/**
- * copyright 2022 codewithsadee
- */
-
-
-
-
-
-/*-----------------------------------*\
-  #CUSTOM PROPERTY
+  #PROPRIÉTÉS PERSONNALISÉES
 \*-----------------------------------*/
 
 :root {
 
     /**
-   * COLORS
+   * COULEURS
    */
 
     --gold-crayola: hsl(38, 61%, 73%);
@@ -38,21 +26,21 @@
     --black-alpha-15: hsla(0, 0%, 0%, 0.15);
 
     /**
-   * GRADIENT COLOR
+   * COULEURS EN DÉGRADÉ
    */
 
     --loading-text-gradient: linear-gradient(90deg, transparent 0% 16.66%, var(--smoky-black-3) 33.33% 50%, transparent 66.66% 75%);
     --gradient-1: linear-gradient(to top, hsla(0, 0%, 0%, 0.9), hsla(0, 0%, 0%, 0.7), transparent);
 
     /**
-   * TYPOGRAPHY
+   * TYPOGRAPHIE
    */
 
-    /* font-family */
+    /* famille de police */
     --fontFamily-forum: 'Forum', cursive;
     --fontFamily-dm_sans: 'DM Sans', sans-serif;
 
-    /* font-size */
+    /* taille de police */
     --fontSize-display-1: calc(1.3rem + 6.7vw);
     --fontSize-headline-1: calc(2rem + 2.5vw);
     --fontSize-headline-2: calc(1.3rem + 2.4vw);
@@ -67,11 +55,11 @@
     --fontSize-label-1: 1.4rem;
     --fontSize-label-2: 1.2rem;
 
-    /* font-weight */
+    /* poids de police */
     --weight-regular: 400;
     --weight-bold: 700;
 
-    /* line-height */
+    /* hauteur de ligne */
     --lineHeight-1: 1em;
     --lineHeight-2: 1.2em;
     --lineHeight-3: 1.5em;
@@ -79,7 +67,7 @@
     --lineHeight-5: 1.85em;
     --lineHeight-6: 1.4em;
 
-    /* letter-spacing */
+    /* espacement des lettres */
     --letterSpacing-1: 0.15em;
     --letterSpacing-2: 0.4em;
     --letterSpacing-3: 0.2em;
@@ -87,19 +75,19 @@
     --letterSpacing-5: 3px;
 
     /**
-   * SPACING
+   * ESPACEMENT
    */
 
     --section-space: 70px;
 
     /**
-   * SHADOW
+   * OMBRE
    */
 
     --shadow-1: 0px 0px 25px 0px hsla(0, 0%, 0%, 0.25);
 
     /**
-   * BORDER RADIUS
+   * RAYON DE BORDURE
    */
 
     --radius-24: 24px;
@@ -120,7 +108,7 @@
 
 
 /*-----------------------------------*\
-  #RESET
+  #RÉINITIALISATION
 \*-----------------------------------*/
 
 *,
@@ -221,7 +209,7 @@ body.nav-active {
 
 
 /*-----------------------------------*\
-  #TYPOGRAPHY
+  #TYPOGRAPHIE
 \*-----------------------------------*/
 
 .display-1,
@@ -298,7 +286,7 @@ body.nav-active {
 
 
 /*-----------------------------------*\
-  #REUSED STYLE
+  #STYLE RÉUTILISÉ
 \*-----------------------------------*/
 
 .container {
@@ -597,13 +585,13 @@ body.nav-active {
 
 
 /*-----------------------------------*\
-  #TOPBAR
+  #BARRE SUPÉRIEURE
 \*-----------------------------------*/
 
 .topbar {
     display: none;
     z-index: 10;
-    /* Ensure the topbar is above other elements */
+    /* Assurez-vous que la barre supérieure est au-dessus des autres éléments */
     position: relative;
 }
 
@@ -682,12 +670,12 @@ textarea.input-field {
 .rdv {
     position: relative;
     z-index: 1;
-    /* Ensure the rdv section is below the topbar */
+    /* Assurez-vous que la section rdv est en dessous de la barre supérieure */
     display: flex;
     align-items: center;
     justify-content: center;
     padding-block: 10vh;
-    /* Add vertical padding for responsiveness */
+    /* Ajoutez un padding vertical pour la réactivité */
 }
 
 
@@ -695,24 +683,24 @@ textarea.input-field {
 
 
 /*-----------------------------------*\
-  #MEDIA QUERIES
+  #REQUÊTES MÉDIA
 \*-----------------------------------*/
 
 /**
- * responsive for larger than 575px screen
+ * réactif pour les écrans plus grands que 575px
  */
 
 @media (min-width: 575px) {
 
 
     /**
-   * CUSTOM PROPERTY
+   * PROPRIÉTÉS PERSONNALISÉES
    */
 
     :root {
 
         /**
-     * typography
+     * typographie
      */
 
         --fontSize-body-2: 2rem;
@@ -722,7 +710,7 @@ textarea.input-field {
 
 
     /**
-   * REUSED STYLE
+   * STYLE RÉUTILISÉ
    */
 
     :is(.service, .about) .section-text {
@@ -737,7 +725,7 @@ textarea.input-field {
 
 
     /**
-   * TOPBAR
+   * BARRE SUPÉRIEURE
    */
 
     .topbar {
@@ -795,7 +783,7 @@ textarea.input-field {
 
 
     /**
-   * HEADER
+   * EN-TÊTE
    */
 
     .header {
@@ -813,7 +801,7 @@ textarea.input-field {
 
 
     /**
-   * FOOTER
+   * PIED DE PAGE
    */
 
     .footer-brand>* {
@@ -845,14 +833,14 @@ textarea.input-field {
 
 
 /**
- * responsive for larger than 768px screen
+ * réactif pour les écrans plus grands que 768px
  */
 
 @media (min-width: 768px) {
 
 
     /**
-   * REUSED STYLE
+   * STYLE RÉUTILISÉ
    */
 
     .grid-list {
@@ -872,7 +860,7 @@ textarea.input-field {
 
 
     /**
-   * HEADER
+   * EN-TÊTE
    */
 
     .navbar-list {
@@ -898,7 +886,7 @@ textarea.input-field {
 
 
     /**
-   * FOOTER
+   * PIED DE PAGE
    */
 
     .footer-brand {
@@ -908,13 +896,13 @@ textarea.input-field {
 }
 
 /**
- * responsive for smaller than 768px screen
+ * réactif pour les écrans plus petits que 768px
  */
 
 @media (max-width: 768px) {
     body {
         overflow: auto;
-        /* Allow scrolling on smaller screens */
+        /* Permettre le défilement sur les écrans plus petits */
     }
 }
 
@@ -923,13 +911,13 @@ textarea.input-field {
 
 
 /**
- * responsive for larger than 992px screen
+ * réactif pour les écrans plus grands que 992px
  */
 
 @media (min-width: 992px) {
 
     /**
-   * CUSTOM PROPERTY
+   * PROPRIÉTÉS PERSONNALISÉES
    */
 
 
@@ -937,7 +925,7 @@ textarea.input-field {
     :root {
 
         /**
-     * spacing
+     * espacement
      */
 
         --section-space: 100px;
@@ -947,7 +935,7 @@ textarea.input-field {
 
 
     /**
-   * REUSED STYLE
+   * STYLE RÉUTILISÉ
    */
 
     :is(.service, .event) .container {
@@ -966,7 +954,7 @@ textarea.input-field {
 
 
     /**
-   * TOPBAR
+   * BARRE SUPÉRIEURE
    */
 
     .topbar-item:not(.link) {
@@ -999,19 +987,19 @@ textarea.input-field {
 
 
 /**
- * responsive for larger than 1200px screen
+ * réactif pour les écrans plus grands que 1200px
  */
 
 @media (min-width: 1200px) {
 
     /**
-   * CUSTOM PROPERTY
+   * PROPRIÉTÉS PERSONNALISÉES
    */
 
     :root {
 
         /**
-     * typography
+     * typographie
      */
 
         --fontSize-title-2: 2.5rem;
@@ -1021,7 +1009,7 @@ textarea.input-field {
 
 
     /**
-   * REUSED STYLE
+   * STYLE RÉUTILISÉ
    */
 
     .container,
@@ -1034,7 +1022,7 @@ textarea.input-field {
 
 
     /**
-   * TOPBAR
+   * BARRE SUPÉRIEURE
    */
 
     .topbar .container {
@@ -1048,7 +1036,7 @@ textarea.input-field {
 
 
     /**
-   * HEADER
+   * EN-TÊTE
    */
 
     .nav-open-btn,
@@ -1122,13 +1110,13 @@ textarea.input-field {
 
 
 /**
- * responsive for larger than 1400px screen
+ * réactif pour les écrans plus grands que 1400px
  */
 
 @media (min-width: 1400px) {
 
     /**
-   * HEADER
+   * EN-TÊTE
    */
 
     .navbar {
