@@ -172,19 +172,35 @@
                                     class="input-field" required>
                                 <input type="tel" name="phone" placeholder="Numéro de téléphone" autocomplete="off"
                                     class="input-field" required>
-                                <input type="text" name="budget" placeholder="Budget estimé (€)" autocomplete="off"
+                                <input type="text" name="pente" placeholder="Pente (en %)" autocomplete="off"
                                     class="input-field">
+                                <input type="text" name="adresse" placeholder="Adresse exacte du lieu"
+                                    autocomplete="off" class="input-field" required>
                                 <input type="text" name="surface" placeholder="Surface en m²" autocomplete="off"
                                     class="input-field">
 
                                 <div class="icon-wrapper">
                                     <ion-icon name="business-outline" aria-hidden="true"></ion-icon>
-                                    <select name="building-type" class="input-field" required>
+                                    <select name="building-type" id="building-type" class="input-field" required
+                                        onchange="toggleOtherBuildingType()">
                                         <option value="Maison">Maison</option>
                                         <option value="Immeuble">Immeuble</option>
                                         <option value="Local commercial">Local commercial</option>
                                         <option value="Ferme">Ferme</option>
-                                        <option value="Autre">Autre</option>
+                                        <option value="Autre">Autre (précisez)</option>
+                                    </select>
+                                </div>
+                                <input type="text" name="building-type-other" id="building-type-other"
+                                    class="input-field" placeholder="Précisez le type de bâtiment"
+                                    style="display:none; margin-top:5px;" autocomplete="off">
+
+                                <div class="icon-wrapper">
+                                    <ion-icon name="walk-outline" aria-hidden="true"></ion-icon>
+                                    <select name="accessibilite" class="input-field" required>
+                                        <option value="">Accessibilité</option>
+                                        <option value="Par côté">côté</option>
+                                        <option value="Côté haut">Côté haut</option>
+                                        <option value="Côté bas">Côté bas</option>
                                     </select>
                                 </div>
                             </div>
@@ -239,6 +255,20 @@
     <!-- Scripts -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script>
+        function toggleOtherBuildingType() {
+            var select = document.getElementById('building-type');
+            var otherInput = document.getElementById('building-type-other');
+            if (select.value === 'Autre') {
+                otherInput.style.display = 'block';
+                otherInput.required = true;
+            } else {
+                otherInput.style.display = 'none';
+                otherInput.required = false;
+                otherInput.value = '';
+            }
+        }
+    </script>
 
 </body>
 

@@ -11,10 +11,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name = $_POST['name'] ?? '';
     $email = $_POST['email'] ?? '';
     $phone = $_POST['phone'] ?? '';
-    $budget = $_POST['budget'] ?? '';
     $surface = $_POST['surface'] ?? '';
     $buildingType = $_POST['building-type'] ?? '';
+    $buildingTypeOther = $_POST['building-type-other'] ?? '';
+    if ($buildingType === 'Autre' && !empty($buildingTypeOther)) {
+        $buildingType = 'Autre : ' . $buildingTypeOther;
+    }
     $message = $_POST['message'] ?? '';
+    $pente = $_POST['pente'] ?? '';
+    $adresse = $_POST['adresse'] ?? '';
+    $accessibilite = $_POST['accessibilite'] ?? '';
 
     $mail = new PHPMailer(true);
 
@@ -24,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
         $mail->Username = 'tceolin1710@gmail.com';
-        $mail->Password = 'htuf gtvi utdi qykk'; // Attention : pas d'espace à la fin
+        $mail->Password = 'htuf gtvi utdi qykk'; // changer par sas.dallies
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port = 587;
 
@@ -34,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // Expéditeur = formulaire, Destinataire = tceolin1710@gmail.com
         $mail->setFrom($email, $name);
-        $mail->addAddress('tceolin1710@gmail.com', 'SAS Dallies');
+        $mail->addAddress('sas.dallies@gmail.com', 'SAS Dallies'); // a changer l'adresse email de destination par sas.dallies@gmail.com
         if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $mail->addReplyTo($email, $name);
         }
@@ -47,12 +53,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <p><strong>Nom :</strong> $name</p>
             <p><strong>Email :</strong> $email</p>
             <p><strong>Téléphone :</strong> $phone</p>
-            <p><strong>Budget estimé :</strong> $budget €</p>
+            <p><strong>Pente :</strong> $pente %</p>
+            <p><strong>Adresse exacte :</strong> $adresse</p>
             <p><strong>Surface :</strong> $surface m²</p>
             <p><strong>Type de bâtiment :</strong> $buildingType</p>
+            <p><strong>Accessibilité :</strong> $accessibilite</p>
             <p><strong>Description :</strong><br>$message</p>
         ";
-        $mail->AltBody = "Nom : $name\nEmail : $email\nTéléphone : $phone\nBudget : $budget\nSurface : $surface\nType de bâtiment : $buildingType\nMessage : $message";
+        $mail->AltBody = "Nom : $name\nEmail : $email\nTéléphone : $phone\nPente : $pente\nAdresse : $adresse\nSurface : $surface\nType de bâtiment : $buildingType\nAccessibilité : $accessibilite\nMessage : $message";
 
         // Envoi
         $mail->send();
