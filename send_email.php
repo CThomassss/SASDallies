@@ -23,6 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $accessibilite = $_POST['accessibilite'] ?? '';
 
     $mail = new PHPMailer(true);
+    $mail->CharSet = 'UTF-8'; // Forcer l'encodage UTF-8
 
     try {
         // Configuration SMTP
@@ -40,15 +41,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // Expéditeur = formulaire, Destinataire = tceolin1710@gmail.com
         $mail->setFrom($email, $name);
-        $mail->addAddress('benjamin.bul261205@gmail.com', 'SAS Dallies'); // a changer l'adresse email de destination par sas.dallies@gmail.com
+        $mail->addAddress('jean-christophe.ceolin@wanadoo.fr', 'SAS Dallies'); // a changer l'adresse email de destination par sas.dallies@gmail.com
         if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $mail->addReplyTo($email, $name);
         }
 
-        // Contenu de l'emails
+        // Contenu de l'email
         $mail->isHTML(true);
         $mail->Subject = 'Nouvelle demande de devis';
         $mail->Body = '
+        <html>
+        <head>
+          <meta charset="UTF-8"> <!-- Encodage UTF-8 pour le contenu HTML -->
+        </head>
+        <body>
         <div style="background:#f6f6f6;padding:30px 0;">
           <table width="100%" cellpadding="0" cellspacing="0" style="max-width:600px;margin:auto;background:#fff;border-radius:10px;box-shadow:0 2px 8px #eee;">
             <tr>
@@ -58,7 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                   <span style="font-size:28px;font-weight:bold;color:#e0a800;letter-spacing:2px;">SAS Dallies</span>
                 </div>
                 <h1 style="font-size:22px;color:#222;margin-bottom:12px;">Nouvelle demande de devis reçue</h1>
-                <p style="font-size:16px;color:#444;margin-bottom:28px;"><br>Voici le récapitulatif de la demande :</p>
+                <p style="font-size:16px;color:#444;margin-bottom:28px;">Merci pour intérêt.<br>Voici le récapitulatif de la demande :</p>
                 <a href="mailto:' . htmlspecialchars($email) . '" style="display:inline-block;padding:12px 32px;background:#222;color:#fff;font-weight:bold;border-radius:6px;text-decoration:none;font-size:16px;margin-bottom:24px;">Répondre au client</a>
               </td>
             </tr>
@@ -114,6 +120,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </tr>
           </table>
         </div>
+        </body>
+        </html>
         ';
         $mail->AltBody = "Nom : $name\nEmail : $email\nTéléphone : $phone\nPente : $pente\nAdresse : $adresse\nSurface : $surface\nType de bâtiment : $buildingType\nAccessibilité : $accessibilite\nMessage : $message";
 
