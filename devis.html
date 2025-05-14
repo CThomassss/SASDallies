@@ -146,23 +146,16 @@
     </div>
 
 
-    <!-- 
-    - Main
-  -->
-
     <main>
         <article>
 
-            <!-- 
-        - #DEVIS
-      -->
-
+            <!-- Devis Section -->
             <section class="rdv" id="Contact">
                 <div class="container">
 
                     <div class="form rdv-form tt">
 
-                        <form action="" class="form-left">
+                        <form action="send_email.php" method="POST" class="form-left">
 
                             <h2 class="headline-1 text-center">Demande de Devis</h2>
 
@@ -174,32 +167,31 @@
                             <!-- Personal Information -->
                             <div class="input-wrapper">
                                 <input type="text" name="name" placeholder="Votre nom" autocomplete="off"
-                                    class="input-field">
+                                    class="input-field" required>
                                 <input type="email" name="email" placeholder="Votre email" autocomplete="off"
-                                    class="input-field">
+                                    class="input-field" required>
                                 <input type="tel" name="phone" placeholder="Numéro de téléphone" autocomplete="off"
+                                    class="input-field" required>
+                                <input type="text" name="budget" placeholder="Budget estimé (€)" autocomplete="off"
                                     class="input-field">
-                                <input type="budget" name="budget" placeholder="Budget estimé (€)" autocomplete="off"
+                                <input type="text" name="surface" placeholder="Surface en m²" autocomplete="off"
                                     class="input-field">
-                                <input type="Surface" name="Surface en m²" placeholder="Surface en m²"
-                                    autocomplete="off" class="input-field">
 
                                 <div class="icon-wrapper">
                                     <ion-icon name="Building-type-outline" aria-hidden="true"></ion-icon>
-                                    <select name="Building-type" class="input-field">
-                                        <option value="1-Building-type">Type de bâtiment</option>
-                                        <option value="2-Building-type">Maison</option>
-                                        <option value="3-Building-type">Immeuble</option>
-                                        <option value="4-Building-type">Local commercial</option>
-                                        <option value="5-Building-type">Ferme</option>
-                                        <option value="6-Building-type">Autre</option>
+                                    <select name="building-type" class="input-field" required>
+                                        <option value="Maison">Maison</option>
+                                        <option value="Immeuble">Immeuble</option>
+                                        <option value="Local commercial">Local commercial</option>
+                                        <option value="Ferme">Ferme</option>
+                                        <option value="Autre">Autre</option>
                                     </select>
                                 </div>
                             </div>
 
                             <!-- Additional Information -->
                             <textarea name="message" placeholder="Description du projet" autocomplete="off"
-                                class="input-field"></textarea>
+                                class="input-field" required></textarea>
 
                             <!-- Submit Button -->
                             <button type="submit" class="btn btn-secondary">
@@ -210,40 +202,8 @@
                         </form>
 
                         <!-- Contact Information -->
-                        <div class="form-right text-center"
-                            style="background-image: url('./assets/images/form-pattern.png'); display: flex; flex-direction: column; align-items: center; justify-content: center;">
-
-                            <h2 class="headline-1 text-center">Contactez-nous</h2>
-
-                            <p class="contact-label">Demande de rendez vous</p>
-
-                            <a href="tel:+33612717234" class="body-1 contact-number hover-underline">06 12 71 72 34</a>
-
-                            <div class="separator"></div>
-
-                            <p class="contact-label">Emplacement</p>
-
-                            <address class="body-4">
-                                Lieu-dit Largenté 32450 Lartigue <br>
-                                France, EU
-                            </address>
-
-                            <p class="contact-label">Horaire</p>
-
-                            <p class="body-4">
-                                Lundi à vendredi <br>
-                                8h00 - 18h00
-                            </p>
-
-                            <!-- 
-                - Logo a droite carrée
-              -->
-                            <a href="/index.html" class="btn btn-secondary" style="margin-top: 20px;">
-                                <span class="text text-1">Accueil</span>
-                                <span class="text text-2" aria-hidden="true">Accueil</span>
-                            </a>
-                            <div class="overlay" data-nav-toggler data-overlay></div>
-
+                        <div class="form-right text-center">
+                            <!-- Informations de contact -->
                         </div>
 
                     </div>
@@ -254,9 +214,7 @@
         </article>
     </main>
 
-    <!-- 
-    - lien ionicon
-  -->
+    <!-- Scripts -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
