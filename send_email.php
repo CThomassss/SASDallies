@@ -24,18 +24,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
         $mail->Username = 'tceolin1710@gmail.com';
-        $mail->Password = 'hghg qyho kijs lojp 7'; // Remplacer par ton mot de passe d'application
+        $mail->Password = 'htuf gtvi utdi qykk'; // Attention : pas d'espace à la fin
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port = 587;
 
-        // Pour debug
-        $mail->SMTPDebug = 0; // 2 si tu veux déboguer en détail
+        // Debug complet pour voir les erreurs SMTP
+        $mail->SMTPDebug = 0; // Désactive l'affichage debug pour permettre la redirection
         $mail->Debugoutput = 'html';
 
-        // Expéditeur et destinataire
-        $mail->setFrom('tceolin1710@gmail.com', 'SAS Dallies');
-        $mail->addAddress('sas.dallies@gmail.com', 'SAS Dallies');
-        $mail->addReplyTo($email, $name);
+        // Expéditeur = formulaire, Destinataire = tceolin1710@gmail.com
+        $mail->setFrom($email, $name);
+        $mail->addAddress('tceolin1710@gmail.com', 'SAS Dallies');
+        if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $mail->addReplyTo($email, $name);
+        }
 
         // Contenu de l'email
         $mail->isHTML(true);
@@ -54,9 +56,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // Envoi
         $mail->send();
-        echo 'Votre demande a été envoyée avec succès.';
+        // Redirection vers index.html après envoi
+        header('Location: index.html');
+        exit;
     } catch (Exception $e) {
-        echo "Erreur lors de l'envoi de l'email : {$mail->ErrorInfo}";
+        echo "Erreur lors de l'envoi de l'email : {$mail->ErrorInfo}<br>";
+        echo "Exception : " . $e->getMessage();
     }
 } else {
     echo 'Méthode non autorisée.';
