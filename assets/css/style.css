@@ -1,23 +1,11 @@
 /*-----------------------------------*\
-  #index.css
-\*-----------------------------------*/
-
-/**
- * copyright 2022 codewithsadee
- */
-
-
-
-
-
-/*-----------------------------------*\
-  #CUSTOM PROPERTY
+  #PROPRIÉTÉS PERSONNALISÉES
 \*-----------------------------------*/
 
 :root {
 
   /**
-   * COLORS
+   * COULEURS
    */
 
   --gold-crayola: hsl(38, 61%, 73%);
@@ -38,21 +26,21 @@
   --black-alpha-15: hsla(0, 0%, 0%, 0.15);
 
   /**
-   * GRADIENT COLOR
+   * COULEURS EN DÉGRADÉ
    */
 
   --loading-text-gradient: linear-gradient(90deg, transparent 0% 16.66%, var(--smoky-black-3) 33.33% 50%, transparent 66.66% 75%);
   --gradient-1: linear-gradient(to top, hsla(0, 0%, 0%, 0.9), hsla(0, 0%, 0%, 0.7), transparent);
 
   /**
-   * TYPOGRAPHY
+   * TYPOGRAPHIE
    */
 
-  /* font-family */
+  /* famille de police */
   --fontFamily-forum: 'Forum', cursive;
   --fontFamily-dm_sans: 'DM Sans', sans-serif;
 
-  /* font-size */
+  /* taille de police */
   --fontSize-display-1: calc(1.3rem + 6.7vw);
   --fontSize-headline-1: calc(2rem + 2.5vw);
   --fontSize-headline-2: calc(1.3rem + 2.4vw);
@@ -67,11 +55,11 @@
   --fontSize-label-1: 1.4rem;
   --fontSize-label-2: 1.2rem;
 
-  /* font-weight */
+  /* poids de police */
   --weight-regular: 400;
   --weight-bold: 700;
 
-  /* line-height */
+  /* hauteur de ligne */
   --lineHeight-1: 1em;
   --lineHeight-2: 1.2em;
   --lineHeight-3: 1.5em;
@@ -79,7 +67,7 @@
   --lineHeight-5: 1.85em;
   --lineHeight-6: 1.4em;
 
-  /* letter-spacing */
+  /* espacement des lettres */
   --letterSpacing-1: 0.15em;
   --letterSpacing-2: 0.4em;
   --letterSpacing-3: 0.2em;
@@ -87,19 +75,19 @@
   --letterSpacing-5: 3px;
 
   /**
-   * SPACING
+   * ESPACEMENT
    */
 
   --section-space: 70px;
 
   /**
-   * SHADOW
+   * OMBRE
    */
 
   --shadow-1: 0px 0px 25px 0px hsla(0, 0%, 0%, 0.25);
 
   /**
-   * BORDER RADIUS
+   * RAYON DE BORDURE
    */
 
   --radius-24: 24px;
@@ -120,7 +108,7 @@
 
 
 /*-----------------------------------*\
-  #RESET
+  #RÉINITIALISATION
 \*-----------------------------------*/
 
 *,
@@ -221,7 +209,7 @@ body.nav-active {
 
 
 /*-----------------------------------*\
-  #TYPOGRAPHY
+  #TYPOGRAPHIE
 \*-----------------------------------*/
 
 .display-1,
@@ -298,7 +286,7 @@ body.nav-active {
 
 
 /*-----------------------------------*\
-  #REUSED STYLE
+  #STYLE RÉUTILISÉ
 \*-----------------------------------*/
 
 .container {
@@ -597,7 +585,7 @@ body.nav-active {
 
 
 /*-----------------------------------*\
-  #PRELOAD
+  #PRÉCHARGEMENT
 \*-----------------------------------*/
 
 .preload {
@@ -678,7 +666,7 @@ body.nav-active {
 
 
 /*-----------------------------------*\
-  #TOPBAR
+  #BARRE SUPÉRIEURE
 \*-----------------------------------*/
 
 .topbar {
@@ -690,7 +678,7 @@ body.nav-active {
 
 
 /*-----------------------------------*\
-  #HEADER
+  #EN-TÊTE
 \*-----------------------------------*/
 
 .header .btn {
@@ -903,7 +891,7 @@ body.nav-active {
 
 
 /*-----------------------------------*\
-  #HERO
+  #HÉRO
 \*-----------------------------------*/
 
 .hero .slider-btn {
@@ -1109,7 +1097,7 @@ body.nav-active {
 
 
 /*-----------------------------------*\
-  #AboutUs
+  #À PROPOS DE NOUS
 \*-----------------------------------*/
 
 .about .section-text {
@@ -1170,7 +1158,7 @@ body.nav-active {
 
 
 /*-----------------------------------*\
-  #SPECIAL Expert
+  #EXPERT SPÉCIAL
 \*-----------------------------------*/
 
 .Expert-Cleaning-content {
@@ -1212,7 +1200,7 @@ body.nav-active {
 
 
 /*-----------------------------------*\
-  #Devis
+  #DEVIS
 \*-----------------------------------*/
 
 .menu .section-title {
@@ -1306,7 +1294,7 @@ body.nav-active {
 
 
 /*-----------------------------------*\
-  #témoignages
+  #TÉMOIGNAGES
 \*-----------------------------------*/
 
 .témoignages {
@@ -1422,7 +1410,7 @@ textarea.input-field {
 
 
 /*-----------------------------------*\
-  #caractéristique
+  #CARACTÉRISTIQUE
 \*-----------------------------------*/
 
 .caractéristique .section-title {
@@ -1465,7 +1453,7 @@ textarea.input-field {
 
 
 /*-----------------------------------*\
-  #EVENT
+  #ÉVÉNEMENT
 \*-----------------------------------*/
 
 .event .section-title {
@@ -1523,7 +1511,7 @@ textarea.input-field {
 
 
 /*-----------------------------------*\
-  #FOOTER
+  #PIED DE PAGE
 \*-----------------------------------*/
 
 .footer-top {
@@ -1636,7 +1624,7 @@ textarea.input-field {
 
 
 /*-----------------------------------*\
-  #BACK TO TOP
+  #RETOUR EN HAUT
 \*-----------------------------------*/
 
 .back-top-btn {
@@ -1673,23 +1661,23 @@ textarea.input-field {
 
 
 /*-----------------------------------*\
-  #MEDIA QUERIES
+  #REQUÊTES MÉDIAS
 \*-----------------------------------*/
 
 /**
- * responsive for larger than 575px screen
+ * responsive pour écran supérieur à 575px
  */
 
 @media (min-width: 575px) {
 
   /**
-   * CUSTOM PROPERTY
+   * PROPRIÉTÉS PERSONNALISÉES
    */
 
   :root {
 
     /**
-     * typography
+     * TYPOGRAPHIE
      */
 
     --fontSize-body-2: 2rem;
@@ -1699,7 +1687,7 @@ textarea.input-field {
 
 
   /**
-   * REUSED STYLE
+   * STYLE RÉUTILISÉ
    */
 
   :is(.service, .about) .section-text {
@@ -1714,7 +1702,7 @@ textarea.input-field {
 
 
   /**
-   * TOPBAR
+   * BARRE SUPÉRIEURE
    */
 
   .topbar {
@@ -1772,7 +1760,7 @@ textarea.input-field {
 
 
   /**
-   * HEADER
+   * EN-TÊTE
    */
 
   .header {
@@ -1791,7 +1779,7 @@ textarea.input-field {
 
 
   /**
-   * HERO
+   * HÉRO
    */
 
   .hero-btn {
@@ -1812,7 +1800,7 @@ textarea.input-field {
 
 
   /**
-   * ABOUT
+   * À PROPOS DE NOUS
    */
 
   .about .container {
@@ -1834,7 +1822,7 @@ textarea.input-field {
 
 
   /**
-   * MENU
+   * DEVIS
    */
 
   .menu-card .title-wrapper {
@@ -1866,7 +1854,7 @@ textarea.input-field {
 
 
   /**
-   * EVENT
+   * ÉVÉNEMENT
    */
 
   .event .container {
@@ -1877,7 +1865,7 @@ textarea.input-field {
 
 
   /**
-   * FOOTER
+   * PIED DE PAGE
    */
 
   .footer-brand>* {
@@ -1909,13 +1897,13 @@ textarea.input-field {
 
 
 /**
- * responsive for larger than 768px screen
+ * responsive pour écran supérieur à 768px
  */
 
 @media (min-width: 768px) {
 
   /**
-   * REUSED STYLE
+   * STYLE RÉUTILISÉ
    */
 
   .grid-list {
@@ -1935,7 +1923,7 @@ textarea.input-field {
 
 
   /**
-   * HEADER
+   * EN-TÊTE
    */
 
   .navbar-list {
@@ -1945,7 +1933,7 @@ textarea.input-field {
 
 
   /**
-   * HERO
+   * HÉRO
    */
 
   .hero .slider-btn {
@@ -1999,7 +1987,7 @@ textarea.input-field {
 
 
   /**
-   * FOOTER
+   * PIED DE PAGE
    */
 
   .footer-brand {
@@ -2013,19 +2001,19 @@ textarea.input-field {
 
 
 /**
- * responsive for larger than 992px screen
+ * responsive pour écran supérieur à 992px
  */
 
 @media (min-width: 992px) {
 
   /**
-   * CUSTOM PROPERTY
+   * PROPRIÉTÉS PERSONNALISÉES
    */
 
   :root {
 
     /**
-     * spacing
+     * ESPACEMENT
      */
 
     --section-space: 100px;
@@ -2035,7 +2023,7 @@ textarea.input-field {
 
 
   /**
-   * REUSED STYLE
+   * STYLE RÉUTILISÉ
    */
 
   :is(.service, .event) .container {
@@ -2054,7 +2042,7 @@ textarea.input-field {
 
 
   /**
-   * TOPBAR
+   * BARRE SUPÉRIEURE
    */
 
   .topbar-item:not(.link) {
@@ -2088,7 +2076,7 @@ textarea.input-field {
 
 
   /**
-   * ABOUT
+   * À PROPOS DE NOUS
    */
 
   .about .container {
@@ -2099,7 +2087,7 @@ textarea.input-field {
 
 
   /**
-   * SPECIAL Expert
+   * EXPERT SPÉCIAL
    */
 
   .Expert-Cleaning {
@@ -2135,7 +2123,7 @@ textarea.input-field {
 
 
   /**
-   * MENU
+   * DEVIS
    */
 
   .menu .grid-list {
@@ -2155,7 +2143,7 @@ textarea.input-field {
 
 
   /**
-   * témoignages
+   * TÉMOIGNAGES
    */
 
   .témoignages-text {
@@ -2166,7 +2154,7 @@ textarea.input-field {
 
 
   /**
-   * rdv
+   * RDV
    */
 
   .rdv-form {
@@ -2177,7 +2165,7 @@ textarea.input-field {
 
 
   /**
-   * FOOTER
+   * PIED DE PAGE
    */
 
   .footer .grid-list {
@@ -2202,19 +2190,19 @@ textarea.input-field {
 
 
 /**
- * responsive for larger than 1200px screen
+ * responsive pour écran supérieur à 1200px
  */
 
 @media (min-width: 1200px) {
 
   /**
-   * CUSTOM PROPERTY
+   * PROPRIÉTÉS PERSONNALISÉES
    */
 
   :root {
 
     /**
-     * typography
+     * TYPOGRAPHIE
      */
 
     --fontSize-title-2: 2.5rem;
@@ -2224,7 +2212,7 @@ textarea.input-field {
 
 
   /**
-   * REUSED STYLE
+   * STYLE RÉUTILISÉ
    */
 
   .container,
@@ -2237,7 +2225,7 @@ textarea.input-field {
 
 
   /**
-   * TOPBAR
+   * BARRE SUPÉRIEURE
    */
 
   .topbar .container {
@@ -2251,7 +2239,7 @@ textarea.input-field {
 
 
   /**
-   * HEADER
+   * EN-TÊTE
    */
 
   .nav-open-btn,
@@ -2313,7 +2301,7 @@ textarea.input-field {
 
 
   /**
-   * HERO
+   * HÉRO
    */
 
   .hero {
@@ -2347,7 +2335,7 @@ textarea.input-field {
 
 
   /**
-   * ABOUT
+   * À PROPOS DE NOUS
    */
 
   .about {
@@ -2357,7 +2345,7 @@ textarea.input-field {
 
 
   /**
-   * SPECIAL Expert
+   * EXPERT SPÉCIAL
    */
 
   .Expert-Cleaning-content {
@@ -2373,7 +2361,7 @@ textarea.input-field {
 
 
   /**
-   * MENU
+   * DEVIS
    */
 
   .menu .grid-list {
@@ -2384,7 +2372,7 @@ textarea.input-field {
 
 
   /**
-   * témoignages
+   * TÉMOIGNAGES
    */
 
   .form-left,
@@ -2396,7 +2384,7 @@ textarea.input-field {
 
 
   /**
-   * caractéristique
+   * CARACTÉRISTIQUE
    */
 
   .caractéristique .grid-list {
@@ -2410,13 +2398,13 @@ textarea.input-field {
 
 
 /**
- * responsive for larger than 1400px screen
+ * responsive pour écran supérieur à 1400px
  */
 
 @media (min-width: 1400px) {
 
   /**
-   * HEADER
+   * EN-TÊTE
    */
 
   .navbar {
@@ -2426,7 +2414,7 @@ textarea.input-field {
 
 
   /**
-   * ABOUT
+   * À PROPOS DE NOUS
    */
 
   .about-content {
@@ -2442,7 +2430,7 @@ textarea.input-field {
 
 
   /**
-   * SPECIAL Expert
+   * EXPERT SPÉCIAL
    */
 
   .Expert-Cleaning {
@@ -2469,7 +2457,7 @@ textarea.input-field {
 
 
   /**
-   * caractéristique
+   * CARACTÉRISTIQUE
    */
 
   .caractéristique {
