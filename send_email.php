@@ -8,32 +8,33 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $phone = $_POST['phone'];
-    $message = $_POST['message'];
+    // Sécurisation des données
+    $name = htmlspecialchars($_POST['name'] ?? '');
+    $email = htmlspecialchars($_POST['email'] ?? '');
+    $phone = htmlspecialchars($_POST['phone'] ?? '');
+    $message = htmlspecialchars($_POST['message'] ?? '');
 
     $mail = new PHPMailer(true);
 
     try {
-        // Configuration du serveur SMTP
+        // Configuration SMTP
         $mail->isSMTP();
-        $mail->Host = 'smtp.gmail.com'; // Serveur SMTP de Gmail
-        $mail->SMTPAuth = true;
-        $mail->Username = 'tceolin1710@gmail.com'; // Remplacez par votre email Gmail
-        $mail->Password = 'hghg qyho kijs lojp 7'; // Remplace par ton mot de passe d'application généré
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; // Sécurisation TLS
-        $mail->Port = 587;
+        $mail->Host       = 'smtp.gmail.com';
+        $mail->SMTPAuth   = true;
+        $mail->Username   = 'tceolin1710@gmail.com'; // Ton email Gmail
+        $mail->Password   = 'hghgqyhokijslojp';       // Ton mot de passe d'application sans espaces
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+        $mail->Port       = 587;
 
-        // Expéditeur et destinataire
-        $mail->setFrom('votre_email@gmail.com', 'SAS Dallies'); // Expéditeur
-        $mail->addAddress('sas.dallies@gmail.com', 'SAS Dallies'); // Destinataire principal
-        $mail->addReplyTo($email, $name); // Répondre à l'expéditeur
+        // Expéditeur / Destinataires
+        $mail->setFrom('tceolin1710@gmail.com', 'SAS Dallies'); // doit correspondre à $mail->Username
+        $mail->addAddress('sas.dallies@gmail.com', 'SAS Dallies');
+        $mail->addReplyTo($email, $name);
 
-        // Contenu de l'email
+        // Contenu de l’email
         $mail->isHTML(true);
         $mail->Subject = 'Nouvelle demande de devis';
-        $mail->Body = "
+        $mail->Body    = "
             <h1>Nouvelle demande de devis</h1>
             <p><strong>Nom :</strong> $name</p>
             <p><strong>Email :</strong> $email</p>
@@ -42,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         ";
         $mail->AltBody = "Nom : $name\nEmail : $email\nTéléphone : $phone\nMessage : $message";
 
-        // Envoyer l'email
+        // Envoi
         $mail->send();
         echo 'Votre demande a été envoyée avec succès.';
     } catch (Exception $e) {
