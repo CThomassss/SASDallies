@@ -29,8 +29,8 @@
    * COULEURS EN DÉGRADÉ
    */
 
-  --loading-text-gradient: linear-gradient(90deg, transparent 0% 16.66%, var(--fumé-noir-3) 33.33% 50%, transparent 66.66% 75%);
-  --gradient-1: linear-gradient(to top, hsla(0, 0%, 0%, 0.9), hsla(0, 0%, 0%, 0.7), transparent);
+  --chargement-texte-gradient: linear-gradient(90deg, transparent 0% 16.66%, var(--fumé-noir-3) 33.33% 50%, transparent 66.66% 75%);
+  --dégradé-1: linear-gradient(to top, hsla(0, 0%, 0%, 0.9), hsla(0, 0%, 0%, 0.7), transparent);
 
   /**
    * TYPOGRAPHIE
@@ -636,7 +636,7 @@ body.nav-active {
 }
 
 .preload .text {
-  background-image: var(--loading-text-gradient);
+  background-image: var(--chargement-texte-gradient);
   background-size: 500%;
   font-size: calc(2rem + 3vw);
   font-weight: var(--weight-bold);
@@ -1466,7 +1466,7 @@ textarea.input-field {
 }
 
 .event-card .card-content {
-  background-image: var(--gradient-1);
+  background-image: var(--dégradé-1);
   position: absolute;
   bottom: 0;
   width: 100%;
