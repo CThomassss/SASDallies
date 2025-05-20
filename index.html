@@ -263,15 +263,15 @@
                 alt="Nettoyage panneaux solaires - SAS Dallies à Lartigue, optimisez votre énergie" class="img-cover">
             </div>
 
-            <p class="label-2 section-subtitle slider-reveal">Panneaux Propre, Énergie au Top</p>
+            <p class="label-2 section-subtitle slider-reveal">Maximisez Votre Rendement Solaire</p>
 
             <h1 class="display-1 hero-title slider-reveal">
-              Optimisez la <br>
-              performance
+              Panneaux propres pour une <br>
+              production optimale
             </h1>
 
             <p class="body-2 hero-text slider-reveal">
-              Un nettoyage pro, un meilleur rendement.
+              Des panneaux solaires entretenus pour une efficacité maximale
             </p>
 
             <a href="#AboutUs" class="btn btn-primary slider-reveal">
@@ -289,15 +289,15 @@
                 alt="Nettoyage solaire express - SAS Dallies" class="img-cover">
             </div>
 
-            <p class="label-2 section-subtitle slider-reveal">Nettoyage Solaire Express</p>
+            <p class="label-2 section-subtitle slider-reveal"> Boostez Votre Production Solaire !</p>
 
             <h1 class="display-1 hero-title slider-reveal">
-              Rapide, efficace, <br>
-              sans compromis.
+              Un simple nettoyage,<br>
+              un gain immédiat
             </h1>
 
             <p class="body-2 hero-text slider-reveal">
-              L'efficacité, sans trace.
+              Des panneaux impeccables pour une rentabilité maximale.
             </p>
 
             <a href="#AboutUs" class="btn btn-primary slider-reveal">
@@ -315,15 +315,15 @@
                 class="img-cover">
             </div>
 
-            <p class="label-2 section-subtitle slider-reveal">Clarté Solaire</p>
+            <p class="label-2 section-subtitle slider-reveal"> Optimisation Photovoltaïque Professionnelle</p>
 
             <h1 class="display-1 hero-title slider-reveal">
-              Des panneaux toujours nets, <br>
-              neuf
+              Des panneaux propres, des <br>
+              performances mesurable
             </h1>
 
             <p class="body-2 hero-text slider-reveal">
-              Des panneaux nets, une énergie pleine puissance.
+              Nettoyage et entretien : les clés d’un rendement solaire constant
             </p>
 
             <a href="#AboutUs" class="btn btn-primary slider-reveal">
@@ -356,7 +356,7 @@
           <ion-icon name="chevron-forward-outline"></ion-icon>
         </button>
 
-        <a href="/devis.html" class="hero-btn has-after">
+        <a href="./devis.html" class="hero-btn has-after">
           <img src="./assets/images/caractéristique-icon-3.png" width="48" height="48" alt="booking icon">
 
           <span class="label-2 text-center span">Devis</span>
@@ -543,7 +543,7 @@
             </p>
 
 
-            <a href="/devis.html" class="btn btn-primary">
+            <a href="./devis.html" class="btn btn-primary">
               <span class="text text-1">Devis Gratuit</span>
 
               <span class="text text-2" aria-hidden="true">Devis Gratuit</span>
@@ -604,7 +604,7 @@
 
           <div class="form rdv-form tt">
 
-            <form action="" class="form-left">
+            <form action="send_email_rdv.php" method="POST" class="form-left">
 
               <h2 class="headline-1 text-center">Demande de rdv</h2>
 
@@ -614,9 +614,11 @@
               </p>
 
               <div class="input-wrapper">
-                <input type="text" name="name" placeholder="Votre nom" autocomplete="off" class="input-field">
-
-                <input type="tel" name="phone" placeholder="Numéro de téléphone" autocomplete="off" class="input-field">
+                <input type="text" name="name" placeholder="Votre nom" autocomplete="off" class="input-field" required>
+                <input type="email" name="email" placeholder="Votre email" autocomplete="off" class="input-field"
+                  required>
+                <input type="tel" name="phone" placeholder="Numéro de téléphone" autocomplete="off" class="input-field"
+                  required>
               </div>
 
               <div class="input-wrapper">
@@ -624,13 +626,12 @@
                 <div class="icon-wrapper">
                   <ion-icon name="Building-type-outline" aria-hidden="true"></ion-icon>
 
-                  <select name="Building-type" class="input-field">
-                    <option value="1-Building-type">Type de bâtiment</option>
-                    <option value="2-Building-type">Maison</option>
-                    <option value="3-Building-type">Immeuble</option>
-                    <option value="4-Building-type">Local commercial</option>
-                    <option value="5-Building-type">Ferme</option>
-                    <option value="6-Building-type">Autre</option>
+                  <select name="Building-type" class="input-field" required>
+                    <option value="Maison">Maison</option>
+                    <option value="Immeuble">Immeuble</option>
+                    <option value="Local commercial">Local commercial</option>
+                    <option value="Ferme">Ferme</option>
+                    <option value="Autre">Autre</option>
                   </select>
 
                   <ion-icon name="ch-down" aria-hidden="true"></ion-icon>
@@ -639,7 +640,7 @@
                 <div class="icon-wrapper">
                   <ion-icon name="calendar-clear-outline" aria-hidden="true"></ion-icon>
 
-                  <input type="date" name="rdv-date" class="input-field">
+                  <input type="date" name="rdv-date" class="input-field" required>
 
                   <ion-icon name="ch-down" aria-hidden="true"></ion-icon>
                 </div>
@@ -647,18 +648,18 @@
                 <div class="icon-wrapper">
                   <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
 
-                  <select name="heure" class="input-field">
-                    <option value="08:00">08 : 00 </option>
-                    <option value="09:00">09 : 00 </option>
-                    <option value="010:00">10 : 00 </option>
-                    <option value="011:00">11 : 00 </option>
-                    <option value="012:00">12 : 00 </option>
-                    <option value="13:00">13 : 00 </option>
-                    <option value="14:00">14 : 00 </option>
-                    <option value="15:00">15 : 00 </option>
-                    <option value="16:00">16 : 00 </option>
-                    <option value="17:00">17 : 00 </option>
-                    <option value="18:00">18 : 00 </option>
+                  <select name="heure" class="input-field" required>
+                    <option value="08:00">08:00</option>
+                    <option value="09:00">09:00</option>
+                    <option value="010:00">10:00</option>
+                    <option value="011:00">11:00</option>
+                    <option value="012:00">12:00</option>
+                    <option value="13:00">13:00</option>
+                    <option value="14:00">14:00</option>
+                    <option value="15:00">15:00</option>
+                    <option value="16:00">16:00</option>
+                    <option value="17:00">17:00</option>
+                    <option value="18:00">18:00</option>
 
                   </select>
 

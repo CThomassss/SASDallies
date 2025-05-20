@@ -9,18 +9,12 @@ use PHPMailer\PHPMailer\Exception;
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Récupération des champs du formulaire
     $name = $_POST['name'] ?? '';
-    $email = $_POST['email'] ?? '';
     $phone = $_POST['phone'] ?? '';
-    $surface = $_POST['surface'] ?? '';
-    $buildingType = $_POST['building-type'] ?? '';
-    $buildingTypeOther = $_POST['building-type-other'] ?? '';
-    if ($buildingType === 'Autre' && !empty($buildingTypeOther)) {
-        $buildingType = 'Autre : ' . $buildingTypeOther;
-    }
+    $buildingType = $_POST['Building-type'] ?? '';
+    $rdvDate = $_POST['rdv-date'] ?? '';
+    $heure = $_POST['heure'] ?? '';
     $message = $_POST['message'] ?? '';
-    $pente = $_POST['pente'] ?? '';
-    $adresse = $_POST['adresse'] ?? '';
-    $accessibilite = $_POST['accessibilite'] ?? '';
+    $email = $_POST['email'] ?? '';
 
     $mail = new PHPMailer(true);
     $mail->CharSet = 'UTF-8';
@@ -31,24 +25,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
         $mail->Username = 'tceolin1710@gmail.com';
-        $mail->Password = 'htuf gtvi utdi qykk'; // changer par sas.dallies
+        $mail->Password = 'htuf gtvi utdi qykk'; // Remplacez par le mot de passe correct
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port = 587;
 
-        // Debug complet pour voir les erreurs SMTP
-        $mail->SMTPDebug = 0; // Désactive l'affichage debug pour permettre la redirection
-        $mail->Debugoutput = 'html';
-
         // Expéditeur = formulaire, Destinataire = tceolin1710@gmail.com
         $mail->setFrom($email, $name);
-        $mail->addAddress('tceolin1710@gmail.com', 'SAS Dallies'); // a changer l'adresse email de destination par sas.dallies@gmail.com
+        $mail->addAddress('tceolin1710@gmail.com', 'SAS Dallies'); // Remplacez par sas.dallies@gmail.com
         if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $mail->addReplyTo($email, $name);
         }
 
         // Contenu de l'email
         $mail->isHTML(true);
-        $mail->Subject = 'Nouvelle demande de devis';
+        $mail->Subject = 'Nouvelle demande de rendez-vous';
         $mail->Body = '
         <div style="background:#f6f6f6;padding:30px 0;">
           <table width="100%" cellpadding="0" cellspacing="0" style="max-width:600px;margin:auto;background:#fff;border-radius:10px;box-shadow:0 2px 8px #eee;">
@@ -58,8 +48,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <div style="margin-bottom:24px;">
                   <span style="font-size:28px;font-weight:bold;color:#e0a800;letter-spacing:2px;">SAS Dallies</span>
                 </div>
-                <h1 style="font-size:22px;color:#222;margin-bottom:12px;">Nouvelle demande de devis reçue</h1>
-                <p style="font-size:16px;color:#444;margin-bottom:28px;">Merci pour intérêt.<br>Voici le récapitulatif de la demande :</p>
+                <h1 style="font-size:22px;color:#222;margin-bottom:12px;">Nouvelle demande de rendez-vous reçue</h1>
+                <p style="font-size:16px;color:#444;margin-bottom:28px;">Voici les détails de la demande :</p>
                 <a href="mailto:' . htmlspecialchars($email) . '" style="display:inline-block;padding:12px 32px;background:#222;color:#fff;font-weight:bold;border-radius:6px;text-decoration:none;font-size:16px;margin-bottom:24px;">Répondre au client</a>
               </td>
             </tr>
@@ -79,27 +69,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <td style="padding:8px 0;">' . htmlspecialchars($phone) . '</td>
                   </tr>
                   <tr>
-                    <td style="padding:8px 0;font-weight:bold;">Adresse :</td>
-                    <td style="padding:8px 0;">' . htmlspecialchars($adresse) . '</td>
-                  </tr>
-                  <tr>
-                    <td style="padding:8px 0;font-weight:bold;">Surface :</td>
-                    <td style="padding:8px 0;">' . htmlspecialchars($surface) . ' m²</td>
-                  </tr>
-                  <tr>
                     <td style="padding:8px 0;font-weight:bold;">Type de bâtiment :</td>
                     <td style="padding:8px 0;">' . htmlspecialchars($buildingType) . '</td>
                   </tr>
                   <tr>
-                    <td style="padding:8px 0;font-weight:bold;">Pente :</td>
-                    <td style="padding:8px 0;">' . htmlspecialchars($pente) . ' %</td>
+                    <td style="padding:8px 0;font-weight:bold;">Date :</td>
+                    <td style="padding:8px 0;">' . htmlspecialchars($rdvDate) . '</td>
                   </tr>
                   <tr>
-                    <td style="padding:8px 0;font-weight:bold;">Accessibilité :</td>
-                    <td style="padding:8px 0;">' . htmlspecialchars($accessibilite) . '</td>
+                    <td style="padding:8px 0;font-weight:bold;">Heure :</td>
+                    <td style="padding:8px 0;">' . htmlspecialchars($heure) . '</td>
                   </tr>
                   <tr>
-                    <td style="padding:8px 0;font-weight:bold;vertical-align:top;">Description :</td>
+                    <td style="padding:8px 0;font-weight:bold;vertical-align:top;">Message :</td>
                     <td style="padding:8px 0;white-space:pre-line;">' . nl2br(htmlspecialchars($message)) . '</td>
                   </tr>
                 </table>
@@ -116,12 +98,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           </table>
         </div>
         ';
-        $mail->AltBody = "Nom : $name\nEmail : $email\nTéléphone : $phone\nPente : $pente\nAdresse : $adresse\nSurface : $surface\nType de bâtiment : $buildingType\nAccessibilité : $accessibilite\nMessage : $message";
+        $mail->AltBody = "Nom : $name\nEmail : $email\nTéléphone : $phone\nType de bâtiment : $buildingType\nDate : $rdvDate\nHeure : $heure\nMessage : $message";
 
         // Envoi
         $mail->send();
-        // Redirection vers index.html après envoi
-        header('Location: index.html');
+        header('Location: index.html'); // Redirection après succès
         exit;
     } catch (Exception $e) {
         echo "Erreur lors de l'envoi de l'email : {$mail->ErrorInfo}<br>";
