@@ -580,6 +580,16 @@ body.nav-active {
   right: 10px;
 }
 
+.logo img {
+  width: 120px;
+  /* Ajustez la largeur selon vos besoins */
+  height: auto;
+  /* Maintient le ratio d'aspect */
+  max-width: 100%;
+  /* Empêche le dépassement */
+  margin-left: 50px;
+}
+
 
 
 
