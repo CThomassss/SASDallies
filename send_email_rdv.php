@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // Expéditeur = formulaire, Destinataire = tceolin1710@gmail.com
         $mail->setFrom($email, $name);
-        $mail->addAddress('tceolin1710@gmail.com', 'SAS Dallies'); // Remplacez par sas.dallies@gmail.com
+        $mail->addAddress('sas.dallies@gmail.com', 'SAS Dallies'); // Remplacez par sas.dallies@gmail.com
         if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $mail->addReplyTo($email, $name);
         }

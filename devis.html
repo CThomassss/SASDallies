@@ -171,7 +171,8 @@
                                 <input type="email" name="email" placeholder="Votre email" autocomplete="off"
                                     class="input-field" required>
                                 <input type="tel" name="phone" placeholder="Numéro de téléphone" autocomplete="off"
-                                    class="input-field" required>
+                                    class="input-field" required pattern="^(\+33|0)[1-9](\d{2}){4}$"
+                                    title="Entrez un numéro de téléphone valide (exemple : +33612345678 ou 0612345678)">
                                 <input type="text" name="pente" placeholder="Pente (en %)" autocomplete="off"
                                     class="input-field">
                                 <input type="text" name="adresse" placeholder="Adresse exacte du lieu"
