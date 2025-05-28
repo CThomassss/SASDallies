@@ -15,14 +15,11 @@
 - [ ] ** finir le fichier robot.txt sitemaps.xml et htaccess**  
   *
 
-
 == 🌐 Mise en ligne & Livraison client
 
 - [ ] **Optimiser les images**  
   * Poids réduit, format WebP si possible.
-- [ ] **Ajouter une mention RGPD**  
-  * Informer sur la gestion des données personnelles (footer ou page dédiée).
 - [ ] **Configurer Google Search Console**  
   * Ajouter le site, soumettre le sitemap, vérifier l’indexation.
-- [ ] **Configurer Google Analytics (ou Matomo)**  
+- [ ] **Configurer Google Analytics**  
   * Si le client souhaite suivre les visites.
