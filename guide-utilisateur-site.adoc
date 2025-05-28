@@ -1,0 +1,55 @@
+= 👤 Guide utilisateur – SAS Dallies
+
+[.text-center]
+****
+*Découvrez comment utiliser le site SAS Dallies pour vos demandes de devis et de rendez-vous !*
+****
+
+== 🏠 Accueil
+
+- Sur la page d’accueil, découvrez les services proposés et l’expertise de SAS Dallies.
+- Naviguez dans le menu pour accéder aux différentes sections (Présentation, Témoignages, Devis, Contact…).
+
+== 📄 Demander un devis
+
+1. Cliquez sur le bouton **Devis** (en bas à droite ou dans le menu).
+2. Remplissez le formulaire avec vos informations (nom, email, téléphone, adresse, type de bâtiment, etc.).
+3. Ajoutez une description de votre projet si besoin.
+4. Cliquez sur **Obtenir un devis**.
+5. ✅ Un message de confirmation s’affiche et vous recevrez une réponse par email.
+
+== 📅 Prendre rendez-vous
+
+1. Rendez-vous dans la section **Contact** ou **Demande de RDV**.
+2. Remplissez le formulaire (nom, email, téléphone, date, heure, type de bâtiment…).
+3. Cliquez sur **Envoyé**.
+4. ✅ Vous serez contacté rapidement pour confirmer le rendez-vous.
+
+== 📞 Contacter SAS Dallies
+
+- Cliquez sur le numéro de téléphone pour appeler directement.
+- Cliquez sur l’email pour envoyer un message.
+- Retrouvez toutes les coordonnées en haut et en bas du site.
+
+== 💬 Lire les témoignages
+
+- Consultez les avis clients dans la section **Témoignages** pour vous rassurer sur la qualité du service.
+
+== 🌐 Navigation mobile
+
+- Sur smartphone ou tablette, ouvrez le menu via l’icône en haut à droite.
+- Toutes les fonctionnalités restent accessibles et adaptées à votre écran.
+
+== 🔒 Sécurité & confidentialité
+
+- Vos données sont utilisées uniquement pour traiter votre demande.
+- Aucun partage à des tiers sans votre accord.
+
+== ❓ Besoin d’aide ?
+
+- Si vous avez un souci avec le site ou une question, utilisez le formulaire de contact ou appelez directement SAS Dallies.
+
+[.text-center]
+****
+✨ *Merci de votre confiance et bonne navigation sur le site SAS Dallies !* ✨
+****

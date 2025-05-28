@@ -1,0 +1,64 @@
+= 📋 Checklist finale SEO & Livraison – SAS Dallies
+
+== 🔍 SEO – Ce qu’il reste à faire
+
+- [ ] **Remplacer tous les `https://votre-site.com`**  
+  Par le vrai nom de domaine dans :
+  * `<meta property="og:url">`
+  * `<link rel="canonical">`
+  * `<link rel="alternate" hreflang=...>`
+  * JSON-LD (`"image"`, `"url"`)
+- [ ] **Compléter les balises de vérification**  
+  * `<meta name="google-site-verification">`
+  * `<meta name="bing-site-verification">`
+  * `<meta name="yandex-verification">`
+- [ ] **Optimiser les balises `<title>` et `<meta name="description">`**  
+  * Uniques et descriptives pour chaque page.
+- [ ] **Vérifier les balises `<meta name="keywords">`**  
+  * Mots-clés pertinents, pas de sur-optimisation.
+- [ ] **Compléter les balises `alt` sur toutes les images importantes**  
+  * Décrire chaque image pour l’accessibilité et le SEO.
+- [ ] **Vérifier la structure des titres (`<h1>`, `<h2>`, etc.)**  
+  * Un seul `<h1>` par page, titres hiérarchisés.
+- [ ] **Vérifier les liens internes et externes**  
+  * Aucun lien cassé, tous les liens importants sont accessibles.
+- [ ] **Ajouter un fichier `robots.txt`**  
+  * Pour contrôler l’indexation si besoin.
+- [ ] **Ajouter un sitemap.xml**  
+  * Pour faciliter l’indexation par Google.
+
+== 🌐 Mise en ligne & Livraison client
+
+- [ ] **Mettre à jour tous les chemins et liens**  
+  * Images, CSS, JS, liens internes, etc.
+- [ ] **Activer le HTTPS sur le domaine**  
+  * Installer un certificat SSL et forcer le HTTPS (redirection .htaccess si Apache).
+- [ ] **Tester le site en ligne**  
+  * Formulaires, navigation, responsive, affichage sur mobile/tablette/desktop.
+- [ ] **Vérifier la réception des emails**  
+  * Tester tous les formulaires (devis, contact, RDV).
+- [ ] **Optimiser les images**  
+  * Poids réduit, format WebP si possible.
+- [ ] **Minifier les fichiers CSS/JS**  
+  * Pour accélérer le chargement.
+- [ ] **Sauvegarder le projet**  
+  * Archive ZIP complète avant livraison.
+- [ ] **Créer une page de confirmation après envoi de formulaire**  
+  * Message clair pour l’utilisateur.
+- [ ] **Ajouter une mention RGPD**  
+  * Informer sur la gestion des données personnelles (footer ou page dédiée).
+- [ ] **Configurer Google Search Console**  
+  * Ajouter le site, soumettre le sitemap, vérifier l’indexation.
+- [ ] **Configurer Google Analytics (ou Matomo)**  
+  * Si le client souhaite suivre les visites.
+- [ ] **Remettre les accès au client**  
+  * FTP/SFTP, accès admin, guide d’utilisation (voir `guide-utilisation.adoc` et `guide-utilisateur-site.adoc`).
+- [ ] **Faire valider le site par le client**  
+  * Présenter le site, recueillir les retours, corriger si besoin.
+
+== ✅ Astuce finale
+
+- Utilise la checklist ci-dessus pour ne rien oublier avant la mise en ligne officielle.
+- Archive ce document avec le projet pour garder une trace de la livraison.
+
+✨ *Bonne livraison et bon référencement à SAS Dallies !* ✨
