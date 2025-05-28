@@ -1680,6 +1680,8 @@ textarea.input-field {
 
 @media (min-width: 575px) {
 
+ 
+
   /**
    * PROPRIÉTÉS PERSONNALISÉES
    */
@@ -2422,7 +2424,6 @@ textarea.input-field {
   }
 
 
-
   /**
    * À PROPOS DE NOUS
    */
@@ -2489,3 +2490,21 @@ textarea.input-field {
   }
 
 }
+
+@media (max-width: 850px) {
+  /* Masquer le logo sur mobile et tablette */
+  .logo img[src="./assets/images/logo.png"] {
+    display: none !important;
+  }
+
+  /* Masquer le bouton Devis sur mobile et tablette */
+  .hero-btn {
+    display: none !important;
+  }
+  /* Masquer le bouton Expert sur mobile et tablette */
+  .header .btn,
+  .btn.btn-secondary {
+    display: none !important;
+  }
+}
+
