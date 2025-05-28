@@ -7,14 +7,29 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Récupération des champs du formulaire
-    $name = $_POST['name'] ?? '';
-    $phone = $_POST['phone'] ?? '';
-    $buildingType = $_POST['Building-type'] ?? '';
-    $rdvDate = $_POST['rdv-date'] ?? '';
-    $heure = $_POST['heure'] ?? '';
-    $message = $_POST['message'] ?? '';
-    $email = $_POST['email'] ?? '';
+    // Récupération et nettoyage des champs du formulaire
+    $name = trim($_POST['name'] ?? '');
+    $phone = trim($_POST['phone'] ?? '');
+    $buildingType = trim($_POST['Building-type'] ?? '');
+    $rdvDate = trim($_POST['rdv-date'] ?? '');
+    $heure = trim($_POST['heure'] ?? '');
+    $message = trim($_POST['message'] ?? '');
+    $email = trim($_POST['email'] ?? '');
+
+    // Validation basique
+    if (
+        empty($name) ||
+        empty($phone) ||
+        empty($buildingType) ||
+        empty($rdvDate) ||
+        empty($heure) ||
+        empty($email) ||
+        !filter_var($email, FILTER_VALIDATE_EMAIL)
+    ) {
+        header('Content-Type: text/plain; charset=utf-8');
+        echo "Erreur : Tous les champs obligatoires doivent être remplis avec un email valide.";
+        exit;
+    }
 
     $mail = new PHPMailer(true);
     $mail->CharSet = 'UTF-8';
@@ -29,12 +44,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port = 587;
 
-        // Expéditeur = formulaire, Destinataire = tceolin1710@gmail.com
+        // Expéditeur = formulaire, Destinataire = SAS Dallies
         $mail->setFrom($email, $name);
-        $mail->addAddress('sas.dallies@gmail.com', 'SAS Dallies'); // Remplacez par sas.dallies@gmail.com
-        if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            $mail->addReplyTo($email, $name);
-        }
+        $mail->addAddress('tceolin1710@gmail.com', 'SAS Dallies');
+        $mail->addReplyTo($email, $name);
 
         // Contenu de l'email
         $mail->isHTML(true);
@@ -69,7 +82,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <td style="padding:8px 0;">' . htmlspecialchars($phone) . '</td>
                   </tr>
                   <tr>
-                    <td style="padding:8px 0;font-weight:bold;">Type de bâtiment :</td>
+                    <td style="padding:8px 0;font-weight:bold;">bâtiment :</td>
                     <td style="padding:8px 0;">' . htmlspecialchars($buildingType) . '</td>
                   </tr>
                   <tr>
@@ -105,10 +118,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header('Location: index.html'); // Redirection après succès
         exit;
     } catch (Exception $e) {
-        echo "Erreur lors de l'envoi de l'email : {$mail->ErrorInfo}<br>";
+        header('Content-Type: text/plain; charset=utf-8');
+        echo "Erreur lors de l'envoi de l'email : {$mail->ErrorInfo}\n";
         echo "Exception : " . $e->getMessage();
     }
 } else {
+    header('Content-Type: text/plain; charset=utf-8');
     echo 'Méthode non autorisée.';
 }
 ?>
