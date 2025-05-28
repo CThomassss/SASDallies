@@ -1,0 +1,98 @@
+= 🚀 Guide d’utilisation – SAS Dallies
+
+[.text-center]
+****
+*Bienvenue dans le guide rapide pour gérer et personnaliser votre site SAS Dallies !*
+****
+
+== ✏️ Modifier les textes du site
+
+Les textes principaux se trouvent dans :
+
+- `index.html` : page d’accueil
+- `devis.html` : page de demande de devis
+
+.Étapes :
+1. Ouvre le fichier avec VS Code, Sublime Text, etc.
+2. Cherche le texte à modifier (ex : `"A Propos de nous"`).
+3. Modifie-le entre les balises HTML.
+4. 💾 Sauvegarde et actualise la page dans ton navigateur.
+
+== 📧 Modifier les emails de réception
+
+Les emails arrivent à l’adresse définie dans :
+
+- `send_email.php` (devis)
+- `send_email_rdv.php` (RDV)
+
+.Modifier l’adresse de réception :
+1. Ouvre le fichier PHP.
+2. Repère la ligne :
++
+[source,php]
+----
+$mail->addAddress('sas.dallies@gmail.com', 'SAS Dallies');
+----
+3. Change l’adresse si besoin.
+4. 💾 Sauvegarde.
+
+== 🔑 Modifier le mot de passe SMTP
+
+Le mot de passe SMTP sert à envoyer les emails via Gmail.
+
+- Ligne à modifier :
++
+[source,php]
+----
+$mail->Password = 'votre_mot_de_passe_application';
+----
+- 🔒 Pour plus de sécurité, utilise un fichier `.env` ou une variable d’environnement (voir doc PHPMailer).
+
+== 🖼️ Modifier les images
+
+Les images sont dans `assets/images/`.
+
+- Pour remplacer une image, garde le même nom ou modifie le chemin dans le HTML.
+- Pour ajouter une image, place-la dans ce dossier et référence-la dans le HTML.
+
+== 🎨 Modifier les styles (couleurs, polices, etc.)
+
+Les styles sont dans :
+- `assets/css/style.css` (site principal)
+- `assets/css/devis.css` (page devis)
+
+.Modifier une couleur ou une police :
+1. Ouvre le fichier CSS.
+2. Modifie la variable CSS ou la règle.
+3. 💾 Sauvegarde et recharge la page.
+
+== 📥 Récupérer les emails envoyés
+
+- Les emails arrivent à l’adresse définie dans les fichiers PHP.
+- Vérifie ta boîte de réception (et les spams !).
+- Si tu ne reçois rien, vérifie la config SMTP et les identifiants.
+
+== 🔍 Mettre à jour le SEO (référencement)
+
+- Modifie les balises `<title>`, `<meta name="description">`, `<meta property="og:...">` dans chaque HTML.
+- Remplace tous les `https://votre-site.com` par ton vrai nom de domaine.
+
+== 🌐 Mettre le site en ligne
+
+1. Transfère tous les fichiers sur ton hébergement (FTP/SFTP).
+2. Mets à jour les chemins si besoin.
+3. Teste le site en ligne (formulaires, images, responsive).
+
+== 🛡️ Sécurité & RGPD
+
+- Ne laisse jamais de mot de passe en clair sur un dépôt public.
+- Ajoute une mention sur la gestion des données personnelles si besoin (RGPD).
+
+== 🆘 Support
+
+Pour toute question technique, contacte ton développeur ou l’agence ayant réalisé le site.
+
+[.text-center]
+****
+✨ *Bonne gestion de votre site SAS Dallies !* ✨
+****
