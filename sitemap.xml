@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  TODO :
+  - Remplace "https://votre-site.com/" par ton vrai nom de domaine une fois le site en ligne.
+    Exemple : https://sas-dallies.fr/
+  - Ajoute ici d'autres pages importantes si tu en as (contact, mentions légales, etc.) :
+    <url>
+      <loc>https://ton-domaine/contact.html</loc>
+      <priority>0.8</priority>
+    </url>
+  - Mets à jour ce fichier à chaque ajout de page importante.
+  - Place ce fichier à la racine du site (c:\xampp\htdocs\SASDallies\sitemap.xml).
+  - Déclare l’URL de ce fichier dans robots.txt :
+    Sitemap: https://ton-domaine/sitemap.xml
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Page d'accueil -->
+  <url>
+    <loc>https://votre-site.com/</loc>
+    <priority>1.0</priority>
+  </url>
+  <!-- Page devis -->
+  <url>
+    <loc>https://votre-site.com/devis.html</loc>
+    <priority>0.9</priority>
+  </url>
+  <!-- Ajoute ici d'autres pages importantes si besoin -->
+</urlset>

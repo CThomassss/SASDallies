@@ -1,0 +1,10 @@
+# Forcer le HTTPS sur tout le site (Apache)
+
+# TODO :
+# - Place ce fichier à la racine de ton site (c:\xampp\htdocs\SASDallies\.htaccess)
+# - Ton hébergement doit avoir un certificat SSL/TLS valide (Let's Encrypt ou autre)
+# - Cette règle redirige automatiquement toutes les requêtes HTTP vers HTTPS
+
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
