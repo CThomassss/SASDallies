@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $mail->isSMTP();
         $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
-        $mail->Username = 'tceolin1710@gmail.com';
+        $mail->Username = 'tceolin1710@gmail.com'; // changer par sas.dallies
         $mail->Password = 'htuf gtvi utdi qykk'; // changer par sas.dallies
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port = 587;
@@ -39,9 +39,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $mail->SMTPDebug = 0; // Désactive l'affichage debug pour permettre la redirection
         $mail->Debugoutput = 'html';
 
-        // Expéditeur = formulaire, Destinataire = tceolin1710@gmail.com
+        // Expéditeur = formulaire, Destinataire = sas.dallies@gmail.com
         $mail->setFrom($email, $name);
-        $mail->addAddress('tceolin1710@gmail.com', 'SAS Dallies'); // a changer l'adresse email de destination par sas.dallies@gmail.com
+        $mail->addAddress('sas.dallies@gmail.com', 'SAS Dallies');
         if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $mail->addReplyTo($email, $name);
         }

@@ -39,14 +39,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $mail->isSMTP();
         $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
-        $mail->Username = 'tceolin1710@gmail.com';
+        $mail->Username = 'tceolin1710@gmail.com'; // Remplacez par le sasdallies
         $mail->Password = 'htuf gtvi utdi qykk'; // Remplacez par le mot de passe correct
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port = 587;
 
         // Expéditeur = formulaire, Destinataire = SAS Dallies
         $mail->setFrom($email, $name);
-        $mail->addAddress('tceolin1710@gmail.com', 'SAS Dallies');
+        $mail->addAddress('sas.dallies@gmail.com', 'SAS Dallies');
         $mail->addReplyTo($email, $name);
 
         // Contenu de l'email
