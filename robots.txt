@@ -1,18 +1,6 @@
 # robots.txt pour SAS Dallies
 
-# TODO :
-# - Si tu veux empêcher l’indexation de certaines pages, ajoute par exemple :
-#   Disallow: /admin/
-#   Disallow: /test.html
-# - Si tu veux autoriser tout (par défaut ici), laisse Disallow: vide.
-#
-# - Pour avoir l’URL réelle de ton sitemap :
-#   1. Mets ton fichier sitemap.xml à la racine de ton site (ex : c:\xampp\htdocs\SASDallies\sitemap.xml).
-#   2. Une fois le site en ligne, l’URL sera : https://ton-nom-de-domaine/sitemap.xml
-#   3. Remplace donc l’URL ci-dessous par celle de ton domaine (ex : https://sas-dallies.fr/sitemap.xml).
-
 User-agent: *
 Disallow:
 
-# Remplace l’URL ci-dessous par l’URL réelle de ton sitemap une fois le site en ligne.
-Sitemap: https://votre-site.com/sitemap.xml
+Sitemap: https://sasdallies.com/sitemap.xml
